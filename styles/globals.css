@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import 'tailwindcss';
+
+:root {
+  /* Font Families */
+  --font-schibstedgrotesk: 'Schibsted Grotesk', sans-serif;
+
+  --color-text: #020202;
+  --color-dark: #060808;
+  --color-dark-blue-1: #0d1828;
+  --color-dark-blue-2: #121c2b;
+  --color-red-1: #d42e4a;
+  --color-red-1-hover: #ab233a;
+  --color-bg-input: #141c26;
+  --color-disabled: #373f51;
+  --color-gray-1: #bac7dd;
+  --color-gray-2: #373f51;
+  --color-gray-3: #c1d3fe;
+}
+
+body {
+  @apply text-[1.5rem] leading-[2.25rem];
+  font-family: var(--font-schibstedgrotesk);
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.container {
+  @apply mx-auto w-full max-w-full md:max-w-3xl lg:max-w-5xl xl:max-w-[90rem];
+}
+.container-fluid {
+  @apply w-full max-w-full px-[5rem];
+}
+.bg-gradient-dark {
+  background: linear-gradient(
+    135deg,
+    var(--color-dark) 35%,
+    var(--color-dark-blue-1) 65%,
+    var(--color-dark) 85%
+  );
+}
+.bg-gray-us-map {
+  background: url('/images/bg-gray-us-map.svg') no-repeat center center;
+  background-size: cover;
+}
+.btn-primary {
+  @apply bg-[var(--color-red-1)] text-white rounded-md flex items-center;
+  transition: background-color 0.15s ease-in-out;
+
+  &:hover {
+    @apply bg-[var(--color-red-1-hover)];
+  }
+}
+.btn-outline {
+  @apply bg-transparent border-2 rounded-md flex items-center;
+  transition: background-color 0.15s ease-in-out;
+
+  &:hover {
+    @apply bg-[var(--color-gray-1)];
+  }
+}
+.btn-disabled {
+  @apply bg-[var(--color-disabled)] text-white rounded-md flex items-center;
+  transition: background-color 0.15s ease-in-out;
+
+  &:hover {
+    @apply bg-[var(--color-disabled)];
+  }
+}
+
+header .menu {
+  @apply hidden md:flex space-x-6;
+
+  a {
+    @apply text-[1.3125rem] text-white font-semibold py-2 px-4;
+  }
+}
+.homepage-hero {
+  background: linear-gradient(135deg, #060808 35%, #091123 65%, #060808 85%);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 65%;
+    right: 8%;
+    transform: translateY(-50%);
+    width: 40%;
+    height: 60%;
+    background: url('/images/network-illustration.svg') no-repeat center center;
+    background-size: contain;
+    opacity: 0.2;
+    pointer-events: none;
+  }
+
+  .hero-form {
+    .search-field {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        transform: translateY(-50%);
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+  }
+}
+
+.list-triangle-point {
+  @apply list-none;
+
+  li {
+    @apply relative pl-[1.375rem] mb-2 last:mb-0;
+
+    &:before {
+      @apply absolute top-0 left-0 text-[1rem] text-[var(--color-red-1)];
+      content: '▶';
+    }
+  }
+}

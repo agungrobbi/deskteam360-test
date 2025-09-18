@@ -1,103 +1,426 @@
-import Image from "next/image";
+import type { Metadata } from 'next';
+import Image from 'next/image';
+
+import Container from '@/components/layout/container';
+import Accordion from '@/components/elements/accordion';
+import TestimonialSlider from '@/components/elements/slider/testimonial';
+import CampaignToolkitSlider from '@/components/elements/slider/campaignToolkit';
+import CardIcon1 from '@/components/elements/card/cardIcon1';
+import CardIcon2 from '@/components/elements/card/cardIcon2';
+
+export const metadata: Metadata = {
+  title: 'All in one platform for your business | CampaignButler',
+  description: 'Site for DeskTeam360 test',
+};
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const accordionItems = [
+    {
+      title: 'Unified Strategy, Maximum Impact',
+      content:
+        'Stop juggling multiple vendors. Our integrated platform ensures your message stays consistent across every voter touchpoint—saving you time, money, and headaches.',
+    },
+    {
+      title: 'Built for Political Success',
+      content:
+        'Stop juggling multiple vendors. Our integrated platform ensures your message stays consistent across every voter touchpoint—saving you time, money, and headaches.',
+    },
+    {
+      title: 'Scale to Your Race',
+      content:
+        'Stop juggling multiple vendors. Our integrated platform ensures your message stays consistent across every voter touchpoint—saving you time, money, and headaches.',
+    },
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+  const testimonialItems = [
+    {
+      image: '/images/pexel-1.png',
+      quote:
+        'The volunteer walking app revolutionized our ground game. We knocked 40% more doors with the same number of volunteers.',
+      author: 'Michael Thompson 1',
+      title: 'County Commissioner',
+    },
+    {
+      image: '/images/pexel-2.png',
+      quote:
+        'The volunteer walking app revolutionized our ground game. We knocked 40% more doors with the same number of volunteers.',
+      author: 'Michael Thompson 2',
+      title: 'County Commissioner',
+    },
+    {
+      image: '/images/pexel-3.png',
+      quote:
+        'The volunteer walking app revolutionized our ground game. We knocked 40% more doors with the same number of volunteers.',
+      author: 'Michael Thompson 3',
+      title: 'County Commissioner',
+    },
+  ];
+
+  const campaignToolkitItems = [
+    {
+      image: '/images/campaign-kit-1.png',
+      title: 'Digital Presence',
+      items: [
+        'Official .Vote Domain — Secure instant credibility with a trusted .vote domain that voters recognize and trust',
+        'Professional Campaign Website — Launch a mobile-friendly, conversion-focused site that tells your story and drives action',
+        "Official .Vote Email — Create a professional, branded email address that enhances your campaign's legitimacy",
+      ],
+    },
+    {
+      image: '/images/campaign-kit-2.png',
+      title: 'Physical Presence',
+      items: [
+        'Official .Vote Domain — Secure instant credibility with a trusted .vote domain that voters recognize and trust',
+        'Professional Campaign Website — Launch a mobile-friendly, conversion-focused site that tells your story and drives action',
+        "Official .Vote Email — Create a professional, branded email address that enhances your campaign's legitimacy",
+      ],
+    },
+    {
+      image: '/images/campaign-kit-1.png',
+      title: 'Another Presence',
+      items: [
+        'Official .Vote Domain — Secure instant credibility with a trusted .vote domain that voters recognize and trust',
+        'Professional Campaign Website — Launch a mobile-friendly, conversion-focused site that tells your story and drives action',
+        "Official .Vote Email — Create a professional, branded email address that enhances your campaign's legitimacy",
+      ],
+    },
+  ];
+
+  const servingNationwideItems = [
+    {
+      icon: '/images/icon-red-us-map.svg',
+      title: 'All 50 States',
+      description: 'Compliant solutions for campaigns anywhere in America',
+    },
+    {
+      icon: '/images/icon-red-race.svg',
+      title: 'Every Race Level',
+      description: 'From city council to congressional campaigns',
+    },
+    {
+      icon: '/images/icon-red-specialized-knowledge.svg',
+      title: 'Specialized Knowledge',
+      description:
+        'Expertise in school board, judicial, and other specialized races',
+    },
+    {
+      icon: '/images/icon-red-raise-hands.svg',
+      title: 'Partisan & Non-Partisan',
+      description: 'Solutions for every type of campaign',
+    },
+  ];
+
+  const campaignSolutionItems = [
+    {
+      icon: '/images/icon-outline-mobile-check.svg',
+      title: 'À La Carte Services',
+      description:
+        'Build your custom campaign toolkit Starting at <b>$99/month</b>',
+      linkUrl: '#',
+      linkLabel: 'See Options',
+    },
+    {
+      icon: '/images/icon-outline-dark-pc-check.svg',
+      title: 'Full Suite Package',
+      description:
+        'Everything you need to launch and run a professional campaign <b>$500/month</b>',
+      linkUrl: '#',
+      linkLabel: 'Get Started',
+      type: 'dark',
+    },
+    {
+      icon: '/images/icon-outline-technical-person.svg',
+      title: 'Custom Solutions',
+      description: 'For larger campaigns with specialized needs',
+      linkUrl: '#',
+      linkLabel: 'Request Quote',
+    },
+  ];
+
+  return (
+    <main>
+      <section className="homepage-hero pt-[18.75rem] text-white pb-[60px] relative overflow-hidden rounded-br-[9.375rem]">
+        <Container>
+          <div className="xl:max-w-[49.375rem] mb-[6.25rem]">
+            <h1 className="text-[4.375rem] leading-[5.25rem] font-semibold mb-[1.875rem]">
+              Win Your Next Election with Campaign Butler's All-in-One Solution
+            </h1>
+            <p className="mb-[4.6875rem]">
+              From digital presence to boots on the ground, we deliver the
+              tools, technology, and expertise that modern campaigns need to
+              connect with voters and secure victory.
+            </p>
+            <div>
+              <form action="" className="hero-form flex items-center gap-4">
+                <span className="text-[1.3125rem]">Find Your Domain</span>
+                <div className="relative w-[24rem]">
+                  <input
+                    type="text"
+                    name="search"
+                    className="search-field bg-[var(--color-bg-input)] w-full text-[1.3125rem] p-2 placeholder-white rounded-md pr-[5rem]"
+                    placeholder="Type here..."
+                  />
+                  <div className="absolute text-[1.3125rem] top-[50%] right-4 -translate-y-[50%]">
+                    | .vote
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  className="border border-white py-2 px-6 text-[1.3125rem] flex items-center gap-2 rounded-md"
+                >
+                  Search
+                  <span className="material-icons !text-[2rem] text-[var(--color-red-1)]">
+                    arrow_outward
+                  </span>
+                </button>
+              </form>
+            </div>
+          </div>
+          <div className="flex items-center mt-16 pt-8">
+            <button className="btn-primary text-white px-8 py-4 rounded-md flex items-center gap-2 text-lg font-medium transition-colors">
+              Launch Your Campaign Today
+              <span className="material-icons text-xl">arrow_outward</span>
+            </button>
+
+            <div className="flex-1 mx-8">
+              <hr className="border-gray-600" />
+            </div>
+
+            <div className="flex items-center gap-8">
+              <button className="text-white hover:text-red-400 flex items-center gap-2 text-lg transition-colors">
+                See Our Pricing
+                <span className="material-icons text-xl text-red-400">
+                  arrow_outward
+                </span>
+              </button>
+
+              <span className="text-gray-400">|</span>
+
+              <button className="text-white hover:text-red-400 flex items-center gap-2 text-lg transition-colors">
+                Schedule a Demo
+                <span className="material-icons text-xl text-red-400">
+                  arrow_outward
+                </span>
+              </button>
+            </div>
+          </div>
+        </Container>
+      </section>
+      <section className="py-30">
+        <Container>
+          <div className="grid grid-cols-2 gap-[5rem]">
+            <div className="md:order-2 border-b-2">
+              <h2 className="text-[4.375rem] leading-[5.25rem] font-semibold mb-[1.875rem]">
+                The Campaign Challenge
+              </h2>
+              <p className="max-w-[40.5625rem]">
+                From digital presence to boots on the ground, we deliver the
+                tools, technology, and expertise that modern campaigns need to
+                connect with voters and secure victory.
+              </p>
+            </div>
+            <div>
+              <Image
+                src="/images/infographic-1.svg"
+                alt="Infographic 1"
+                width={695}
+                height={452}
+                priority
+              />
+            </div>
+          </div>
+          <div className="py-30 grid grid-cols-2 gap-[5rem]">
+            <div className="">
+              <h2 className="text-[4.375rem] leading-[5.25rem] font-semibold mb-[1.875rem]">
+                The Campaign Butler Solution
+              </h2>
+              <p className="max-w-[40.5625rem]">
+                We've created the first truly integrated campaign platform that
+                handles everything from your domain name to your door-knocking
+                strategy. Our unified approach eliminates communication gaps,
+                reduces costs, and dramatically increases your campaign's
+                effectiveness.
+              </p>
+            </div>
+            <div>
+              <Image
+                src="/images/infographic-2.svg"
+                alt="Infographic 2"
+                width={695}
+                height={452}
+                priority
+              />
+            </div>
+          </div>
+        </Container>
+      </section>
+      <section className=" relative py-30 bg-[var(--color-text)] rounded-tl-[9.375rem] text-white overflow-hidden">
+        <Image
+          src="/images/bg-spiraling-dot-1.svg"
+          alt="Spiraling Dot"
+          width={2766}
+          height={1719}
+          priority
+          className="absolute top-[-33%] left-[-26%] z-0"
+        />
+        <Container className="relative z-1">
+          <h2 className="text-[4.375rem] leading-[5.25rem] font-semibold mb-[3.125rem] text-center">
+            Why Winning Campaigns Choose Campaign Butler
+          </h2>
+          <div className="grid grid-cols-2 gap-[1.875rem]">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/images/chess.png"
+              alt="Infographic 2"
+              width={695}
+              height={452}
+              priority
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <Accordion items={accordionItems} />
+          </div>
+        </Container>
+      </section>
+      <section className="pt-30">
+        <Container type="fluid">
+          <h2 className="text-[4.375rem] leading-[5.25rem] font-semibold mb-[3.125rem] text-center">
+            Trusted by Winning Candidates
+          </h2>
+          <TestimonialSlider slides={testimonialItems} />
+        </Container>
+        <div className="transform -translate-y-[400px] mb-[-400px] pt-[400px] pb-30 bg-[var(--color-dark-blue-2)] text-white">
+          <Container>
+            <div className="flex flex-row flex-wrap gap-6 items-center justify-center">
+              <Image
+                src="/images/logo-human-right.svg"
+                alt="Human Right"
+                width={211}
+                height={84}
+                priority
+                className="max-h-[3.9375rem]"
+              />
+              <Image
+                src="/images/logo-planned-parenthood.svg"
+                alt="Human Right"
+                width={211}
+                height={84}
+                priority
+                className="max-h-[3.9375rem]"
+              />
+              <Image
+                src="/images/logo-nccs.svg"
+                alt="Human Right"
+                width={211}
+                height={84}
+                priority
+                className="max-h-[3.9375rem]"
+              />
+              <Image
+                src="/images/logo-us-immigration.svg"
+                alt="Human Right"
+                width={211}
+                height={84}
+                priority
+                className="max-h-[3.9375rem]"
+              />
+              <Image
+                src="/images/logo-naral.svg"
+                alt="Human Right"
+                width={211}
+                height={84}
+                priority
+                className="max-h-[3.9375rem]"
+              />
+            </div>
+          </Container>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+      </section>
+      <section className="py-30">
+        <Container>
+          <CampaignToolkitSlider
+            title="Your Complete Campaign Toolkit"
+            slides={campaignToolkitItems}
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        </Container>
+      </section>
+      <section className=" relative py-30 bg-gradient-dark text-white overflow-hidden">
+        <Image
+          src="/images/bg-spiraling-dot-2.svg"
+          alt="Spiraling Dot"
+          width={2766}
+          height={1719}
+          priority
+          className="absolute top-0 -right-[30%] z-0"
+        />
+        <Container className="relative z-1">
+          <div className="grid grid-cols-3 gap-10">
+            <div className="col-span-2">
+              <h2 className="text-[4.375rem] leading-[5.25rem] font-semibold mb-[3.125rem]">
+                30+ Years of Campaign Victory Experience
+              </h2>
+              <p>
+                <span className="text-[var(--color-red-1)]">
+                  Campaign Butler
+                </span>
+                combines decades of political expertise with cutting-edge
+                marketing technology. We've helped candidates at every
+                level—from school board to statewide office—connect with voters
+                and win elections. Our team understands that exposure wins
+                elections, but only when it's strategic, consistent, and
+                targeted. That's why we've built the only truly integrated
+                campaign marketing platform that unites traditional outreach
+                with digital essentials.
+              </p>
+            </div>
+            <Image
+              src="/images/experience-icons.svg"
+              alt="Experience"
+              width={695}
+              height={452}
+              priority
+            />
+          </div>
+        </Container>
+      </section>
+      <section className="bg-gray-us-map relative py-30 overflow-hidden">
+        <Container className="relative z-1">
+          <h2 className="text-[4.375rem] leading-[5.25rem] font-semibold mb-[3.125rem] text-center">
+            Serving Campaigns Nationwide
+          </h2>
+          <div className="w-full">
+            <div className="grid grid-cols-4 gap-10">
+              {servingNationwideItems.map((item, index) => (
+                <CardIcon1
+                  key={index}
+                  icon={item.icon}
+                  title={item.title}
+                  description={item.description}
+                />
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+      <section className="relative py-30 overflow-hidden">
+        <Container className="relative z-1">
+          <h2 className="text-[4.375rem] leading-[5.25rem] font-semibold mb-[3.125rem] text-center">
+            Campaign Solutions for Every Budget
+          </h2>
+          <div className="w-full">
+            <div className="flex flex-row justify-center gap-10">
+              {campaignSolutionItems.map((item, index) => (
+                <CardIcon2
+                  key={index}
+                  icon={item.icon}
+                  title={item.title}
+                  description={item.description}
+                  linkUrl={item.linkUrl}
+                  linkLabel={item.linkLabel}
+                  type={item?.type}
+                />
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+    </main>
   );
 }
