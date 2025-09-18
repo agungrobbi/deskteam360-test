@@ -7,6 +7,8 @@ import Image from 'next/image';
 import '@egjs/react-flicking/dist/flicking.css';
 import '@egjs/react-flicking/dist/flicking-inline.css';
 
+import { getImagePath } from '@/utils/images';
+
 interface campaignToolkit {
   image: string;
   title: string;
@@ -110,7 +112,7 @@ const campaignToolkitSlider: React.FC<campaignToolkitSliderProps> = ({
                 )}
               </div>
               <Image
-                src={slide.image}
+                src={getImagePath(slide.image)}
                 alt={slide.title}
                 width={1244}
                 height={700}

@@ -7,6 +7,8 @@ import Image from 'next/image';
 import '@egjs/react-flicking/dist/flicking.css';
 import '@egjs/react-flicking/dist/flicking-inline.css';
 
+import { getImagePath } from '@/utils/images';
+
 interface Testimonial {
   image: string;
   quote: string;
@@ -76,7 +78,7 @@ const TestimonialSlider: React.FC<TestimonialSliderProps> = ({ slides }) => {
               }}
             >
               <Image
-                src={slide.image}
+                src={getImagePath(slide.image)}
                 alt={slide.author}
                 width={1244}
                 height={700}

@@ -7,7 +7,6 @@ const nextConfig = {
     unoptimized: true,
   },
   basePath: '/deskteam360-test',
-  assetPrefix: '/deskteam360-test',
   output: 'export',
   trailingSlash: true,
 };

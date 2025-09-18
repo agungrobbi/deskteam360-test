@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 
+import { getImagePath } from '@/utils/images';
 import Container from '@/components/layout/container';
 import Accordion from '@/components/elements/accordion';
 import TestimonialSlider from '@/components/elements/slider/testimonial';
@@ -221,7 +222,7 @@ export default function Home() {
             </div>
             <div>
               <Image
-                src="/images/infographic-1.svg"
+                src={getImagePath('/images/infographic-1.svg')}
                 alt="Infographic 1"
                 width={695}
                 height={452}
@@ -244,7 +245,7 @@ export default function Home() {
             </div>
             <div>
               <Image
-                src="/images/infographic-2.svg"
+                src={getImagePath('/images/infographic-2.svg')}
                 alt="Infographic 2"
                 width={695}
                 height={452}
@@ -256,7 +257,7 @@ export default function Home() {
       </section>
       <section className=" relative py-30 bg-[var(--color-text)] rounded-tl-[9.375rem] text-white overflow-hidden">
         <Image
-          src="/images/bg-spiraling-dot-1.svg"
+          src={getImagePath('/images/bg-spiraling-dot-1.svg')}
           alt="Spiraling Dot"
           width={2766}
           height={1719}
@@ -269,7 +270,7 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-2 gap-[1.875rem]">
             <Image
-              src="/images/chess.png"
+              src={getImagePath('/images/chess.png')}
               alt="Infographic 2"
               width={695}
               height={452}
@@ -290,7 +291,7 @@ export default function Home() {
           <Container>
             <div className="flex flex-row flex-wrap gap-6 items-center justify-center">
               <Image
-                src="/images/logo-human-right.svg"
+                src={getImagePath('/images/logo-human-right.svg')}
                 alt="Human Right"
                 width={211}
                 height={84}
@@ -298,7 +299,7 @@ export default function Home() {
                 className="max-h-[3.9375rem]"
               />
               <Image
-                src="/images/logo-planned-parenthood.svg"
+                src={getImagePath('/images/logo-planned-parenthood.svg')}
                 alt="Human Right"
                 width={211}
                 height={84}
@@ -306,7 +307,7 @@ export default function Home() {
                 className="max-h-[3.9375rem]"
               />
               <Image
-                src="/images/logo-nccs.svg"
+                src={getImagePath('/images/logo-nccs.svg')}
                 alt="Human Right"
                 width={211}
                 height={84}
@@ -314,7 +315,7 @@ export default function Home() {
                 className="max-h-[3.9375rem]"
               />
               <Image
-                src="/images/logo-us-immigration.svg"
+                src={getImagePath('/images/logo-us-immigration.svg')}
                 alt="Human Right"
                 width={211}
                 height={84}
@@ -322,7 +323,7 @@ export default function Home() {
                 className="max-h-[3.9375rem]"
               />
               <Image
-                src="/images/logo-naral.svg"
+                src={getImagePath('/images/logo-naral.svg')}
                 alt="Human Right"
                 width={211}
                 height={84}
@@ -343,7 +344,7 @@ export default function Home() {
       </section>
       <section className=" relative py-30 bg-gradient-dark text-white overflow-hidden">
         <Image
-          src="/images/bg-spiraling-dot-2.svg"
+          src={getImagePath('/images/bg-spiraling-dot-2.svg')}
           alt="Spiraling Dot"
           width={2766}
           height={1719}
@@ -371,7 +372,7 @@ export default function Home() {
               </p>
             </div>
             <Image
-              src="/images/experience-icons.svg"
+              src={getImagePath('/images/experience-icons.svg')}
               alt="Experience"
               width={695}
               height={452}

@@ -2,6 +2,8 @@
 import React from 'react';
 import Image from 'next/image';
 
+import { getImagePath } from '@/utils/images';
+
 interface CardIcon2Item {
   icon: string;
   title: string;
@@ -23,9 +25,9 @@ const CardIcon2: React.FC<CardIcon2Item> = ({
     <div
       className={`max-w-[430px] p-7 rounded-[1.25rem] flex flex-col items-start ${type === 'dark' ? 'bg-gradient-dark text-white' : 'bg-[var(--color-gray-3)]'}`}
     >
-      <div className="flex justify-end h-[5.1875rem] mb-10">
+      <div className="flex justify-end w-full items-start h-[5.1875rem] mb-10">
         <Image
-          src={icon}
+          src={getImagePath(icon)}
           alt={title}
           width={98}
           height={98}

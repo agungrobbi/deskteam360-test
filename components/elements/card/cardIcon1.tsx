@@ -2,6 +2,8 @@
 import React from 'react';
 import Image from 'next/image';
 
+import { getImagePath } from '@/utils/images';
+
 interface CardIcon1Item {
   icon: string;
   title: string;
@@ -14,7 +16,7 @@ const CardIcon1: React.FC<CardIcon1Item> = ({ icon, title, description }) => {
       <div className="flex flex-row gap-4 mb-4">
         <div className="h-[5.1875rem]">
           <Image
-            src={icon}
+            src={getImagePath(icon)}
             alt={title}
             width={98}
             height={98}

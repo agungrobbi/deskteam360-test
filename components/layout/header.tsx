@@ -1,5 +1,6 @@
 import Image from 'next/image';
 
+import { getImagePath } from '@/utils/images';
 import Container from '@/components/layout/container';
 
 export default function Header() {
@@ -7,9 +8,9 @@ export default function Header() {
     <header className="absolute w-full shadow-sm top-0 z-50">
       <Container>
         <div className="flex justify-between items-center py-8 border-b border-b-white">
-          <a href="route('app.index')" className="brand">
+          <a href="#" className="brand">
             <Image
-              src="/images/logo.svg"
+              src={getImagePath('/images/logo.svg')}
               alt="CampaignButler Logo"
               width={280}
               height={34}
