@@ -350,7 +350,7 @@ export default function Home() {
           priority
           className="absolute top-0 -right-[30%] z-0"
         />
-        <Container className="relative z-1">
+        <Container>
           <div className="grid grid-cols-3 gap-10">
             <div className="col-span-2">
               <h2 className="text-[4.375rem] leading-[5.25rem] font-semibold mb-[3.125rem]">
@@ -381,7 +381,7 @@ export default function Home() {
         </Container>
       </section>
       <section className="bg-gray-us-map relative py-30 overflow-hidden">
-        <Container className="relative z-1">
+        <Container>
           <h2 className="text-[4.375rem] leading-[5.25rem] font-semibold mb-[3.125rem] text-center">
             Serving Campaigns Nationwide
           </h2>
@@ -400,7 +400,7 @@ export default function Home() {
         </Container>
       </section>
       <section className="relative py-30 overflow-hidden">
-        <Container className="relative z-1">
+        <Container>
           <h2 className="text-[4.375rem] leading-[5.25rem] font-semibold mb-[3.125rem] text-center">
             Campaign Solutions for Every Budget
           </h2>
