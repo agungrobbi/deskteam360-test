@@ -3,17 +3,17 @@
  */
 
 const isProd = process.env.NODE_ENV === 'production';
+const basePath = '/deskteam360-test';
 
 const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: isProd ? '/deskteam360-test' : '',
-  assetPrefix: isProd ? '/deskteam360-test' : '',
+  basePath: isProd ? basePath : '',
+  assetPrefix: isProd ? basePath : '',
   output: 'export',
   trailingSlash: true,
+  generateBuildId: () => 'build',
 };
 
-module.exports = {
-  ...nextConfig,
-};
+module.exports = nextConfig;
