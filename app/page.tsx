@@ -141,6 +141,21 @@ export default function Home() {
   return (
     <main>
       <section className="homepage-hero pt-[18.75rem] text-white pb-[60px] relative overflow-hidden rounded-br-[9.375rem]">
+        <div
+          style={{
+            content: '',
+            position: 'absolute',
+            top: '65%',
+            right: '8%',
+            transform: 'translateY(-50%)',
+            width: '40%',
+            height: '60%',
+            background: `url('${getImagePath('/images/network-illustration.svg')}') no-repeat center center`,
+            backgroundSize: 'contain',
+            opacity: '0.2',
+            pointerEvents: 'none',
+          }}
+        ></div>
         <Container>
           <div className="xl:max-w-[49.375rem] mb-[6.25rem]">
             <h1 className="text-[4.375rem] leading-[5.25rem] font-semibold mb-[1.875rem]">
@@ -381,7 +396,13 @@ export default function Home() {
           </div>
         </Container>
       </section>
-      <section className="bg-gray-us-map relative py-30 overflow-hidden">
+      <section
+        className="bg-gray-us-map relative py-30 overflow-hidden"
+        style={{
+          background: `url('${getImagePath('/images/bg-gray-us-map.svg')}') no-repeat center center`,
+          backgroundSize: 'cover',
+        }}
+      >
         <Container>
           <h2 className="text-[4.375rem] leading-[5.25rem] font-semibold mb-[3.125rem] text-center">
             Serving Campaigns Nationwide
@@ -418,6 +439,142 @@ export default function Home() {
                   type={item?.type}
                 />
               ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+      <section className="relative py-30 overflow-hidden bg-gradient-dark text-white">
+        <Container>
+          <div className="grid grid-cols-2 gap-20">
+            <div>
+              <h2 className="text-[4.375rem] leading-[5.25rem] font-semibold mb-[3.125rem]">
+                Ready to Launch{' '}
+                <span className="text-[var(--color-red-1)]">
+                  Your Winning Campaign?
+                </span>
+              </h2>
+              <p className="text-[2.25rem] leading-[2.7rem] mb-6">
+                Get started today with Campaign Butler and receive:
+              </p>
+              <ul className="list-triangle-point">
+                <li>
+                  <b>Same-day</b> domain and email setup
+                </li>
+                <li>
+                  <b>Professional</b> website within 72 hours
+                </li>
+                <li>
+                  <b>Dedicated</b> campaign strategist
+                </li>
+                <li>
+                  <b>Complete</b> onboarding and training
+                </li>
+              </ul>
+            </div>
+            <form action="" className="flex flex-col gap-[1.25rem]">
+              <input
+                type="text"
+                name="first-name"
+                className="w-full text-[1.3125rem] py-2 px-4 placeholder-white rounded-md pr-[5rem] border border-white"
+                placeholder="First Name"
+              />
+              <input
+                type="text"
+                name="last-name"
+                className="w-full text-[1.3125rem] py-2 px-4 placeholder-white rounded-md pr-[5rem] border border-white"
+                placeholder="Last Name"
+              />
+              <input
+                type="email"
+                name="email"
+                className="w-full text-[1.3125rem] py-2 px-4 placeholder-white rounded-md pr-[5rem] border border-white"
+                placeholder="Email"
+              />
+              <input
+                type="text"
+                name="phone"
+                className="w-full text-[1.3125rem] py-2 px-4 placeholder-white rounded-md pr-[5rem] border border-white"
+                placeholder="Phone Number (optional)"
+              />
+              <div className="checkbox mb-6">
+                <label className="text-[1.125rem] leading-[1.875rem] flex items-start gap-3">
+                  <div className="relative flex-shrink-0 mt-[2px]">
+                    <input
+                      type="checkbox"
+                      className="appearance-none w-4 h-4 border border-gray-400 rounded-sm bg-transparent checked:bg-blue-600 checked:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1"
+                    />
+                    <svg
+                      className="absolute top-0 left-0 w-4 h-4 text-white pointer-events-none opacity-0 peer-checked:opacity-100"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <span className="text-white">
+                    I agree to receive text messages from Campaign Butler. By
+                    checking this box and providing your phone number,{' '}
+                    <span className="text-[var(--color-red-1)] underline">
+                      Read more...
+                    </span>
+                  </span>
+                </label>
+              </div>
+              <button
+                type="submit"
+                className="btn-primary py-2 px-4 text-[1.3125rem] inline-flex self-start items-center gap-2"
+              >
+                Launch My Campaign
+                <span className="material-icons !text-[2rem]">
+                  arrow_outward
+                </span>
+              </button>
+            </form>
+          </div>
+        </Container>
+      </section>
+      <section
+        className="relative py-30 text-white"
+        style={{
+          background: `url('${getImagePath('/images/bg-dark-spiraling-dot-3.svg')}') no-repeat center center`,
+          backgroundSize: 'cover',
+        }}
+      >
+        <Container>
+          <div className="relative grid grid-cols-2 gap-20">
+            <div className="absolute -top-[60%]">
+              <Image
+                src={getImagePath('/images/person-1.svg')}
+                alt="Person"
+                width={400}
+                height={500}
+                priority
+                className="object-contain"
+              />
+            </div>
+            <div></div>
+            <div className="order-2">
+              <h3 className="text-[2.25rem] leading-[2.7rem] font-semibold mb-[1.875rem]">
+                Visibility Starts Here. Victory Follows.
+              </h3>
+              <p className="text-[1.5rem] leading-[2.25rem] mb-[2.5rem]">
+                Don't leave your campaign success to chance. Partner with the
+                experts who understand what it takes to win in today's complex
+                political landscape.
+              </p>
+              <button
+                type="submit"
+                className="btn-primary py-2 px-4 text-[1.3125rem] gap-2"
+              >
+                Get Started Today
+                <span className="material-icons !text-[2rem]">
+                  arrow_outward
+                </span>
+              </button>
             </div>
           </div>
         </Container>

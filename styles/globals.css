@@ -40,10 +40,6 @@ body {
     var(--color-dark) 85%
   );
 }
-.bg-gray-us-map {
-  background: url('/images/bg-gray-us-map.svg') no-repeat center center;
-  background-size: cover;
-}
 .btn-primary {
   @apply bg-[var(--color-red-1)] text-white rounded-md flex items-center;
   transition: background-color 0.15s ease-in-out;
@@ -79,20 +75,6 @@ header .menu {
 .homepage-hero {
   background: linear-gradient(135deg, #060808 35%, #091123 65%, #060808 85%);
   position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 65%;
-    right: 8%;
-    transform: translateY(-50%);
-    width: 40%;
-    height: 60%;
-    background: url('/images/network-illustration.svg') no-repeat center center;
-    background-size: contain;
-    opacity: 0.2;
-    pointer-events: none;
-  }
 
   .hero-form {
     .search-field {
